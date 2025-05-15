@@ -1,0 +1,9 @@
+<div class="clickable dropdown">
+    <label for="dropdown-toggle" (click)="handleIsShow()">
+        <img class="clickable" src="../../../assets/icons/three-dots-vertical.svg" alt="more-actions" />
+    </label>
+    <div [ngClass]="{'show': show }" class="dropdown-content">
+        <a [routerLink]="['./' + id]">Editar</a>
+        <a (click)="deleteById()">Eliminar</a>
+    </div>
+</div>

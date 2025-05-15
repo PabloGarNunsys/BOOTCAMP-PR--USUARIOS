@@ -1,0 +1,67 @@
+
+<main>
+    <header>
+        <h2>
+            Lista de usuarios
+        </h2>
+        <button class="clickable" [routerLink]="['./new']" >Crear Usuario</button>
+    </header>
+    <hr>
+    
+    <div class="main-content">
+        @defer (when userList) {
+
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>Nombre</th>
+                    <th>Rol</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <app-filter />
+                    </td>
+                </tr>
+                @if(userList.length > 0) {
+                    @for (user of userList; track user.id) {
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td style="text-align: left;">
+                                <div class="title">{{ user.name + " " + user.surname }}</div>
+                                <div class="subtitle">{{ user.email }}</div>
+                            </td>
+                            <td>{{ user.rol_name }}</td>
+                            <td>
+                                <app-button-dropdown [id]="user.id" />
+                            </td>
+        
+                        </tr>
+                    }
+                }
+                @else {
+                <tr>
+                    <td colspan="4" style="border: none;">
+                        <h2>No hay usuarios registrados</h2>
+                    </td>
+                </tr>
+                    
+                }
+
+            </table>
+
+                <div class="paginator">
+                    <button [disabled]="currentPage - 1 < 0" class="clickable" (click)="getPrevPageOfUsers()" >Prev</button>
+                    <span>{{ currentPage + 1 }}/{{ maxPage }} ({{ numMaxOfUsers }} usuarios)</span>
+                    <button 
+                        class="clickable" 
+                        [disabled]="currentPage + 1 >= maxPage" 
+                        (click)="getNextPageOfUsers()">Next</button>
+                </div>
+            
+        }
+        @placeholder {
+            <h2>Cargando...</h2>
+        }
+    </div>
+</main>

@@ -1,0 +1,79 @@
+
+
+
+.main-content {
+    margin-left: 20rem;
+    margin-right: 20rem;
+}
+
+
+.main-content:not(:has(table)) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginator {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+hr {
+    border: 1px solid black;
+    
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 1rem;
+}
+
+
+
+table {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: inherit;
+    text-align: center;
+    border: none;
+    border-collapse: separate;
+    border-spacing: 0 0.8rem;
+    display: table;
+    width: 100%;
+
+    tr {
+        border: 5px solid rgba(0, 0, 0, 0);
+    }
+
+    td:not([colspan]) {
+        background-color: var(--container-color);
+        padding: 0.3rem;
+    }
+
+    td[colspan] {
+        background: none;
+        border: 1px solid black;
+        border-radius: 1rem;
+    }
+    
+}
+
+td:nth-child(1) {
+    border-radius: 1rem 0 0 1rem;
+}
+td:last-child {
+    border-radius: 0 1rem 1rem 0;
+}
+
+@media (max-width: 800px) {
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+

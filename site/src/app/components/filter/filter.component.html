@@ -1,0 +1,22 @@
+<details>
+    <summary>Filtro</summary>
+    <p>
+        <label>
+            <span>Nombre</span>
+            <input type="search" name="name" (keyup)="inputFilter($event)">
+        </label>
+        <label>
+            <span>Email</span>
+            <input type="search" name="email" (keyup)="inputFilter($event)">
+        </label>
+        <label>
+            <span>Rol</span>
+            <select name="rol_id" [disabled]="roleList.length == 0" (change)="selectFilter($event)">
+                <option value="0">Selecciona una opcion</option>
+                @for (rol of roleList; track rol.id) {
+                    <option [value]="rol.id">{{ rol.name }}</option>
+                }
+            </select>
+        </label>
+    </p>
+</details>

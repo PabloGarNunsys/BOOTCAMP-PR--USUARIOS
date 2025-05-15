@@ -1,0 +1,27 @@
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 10rem;
+    z-index: 1;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
+    a {
+        display: block;
+        background-color: white;
+        padding: 0.6rem 0.8rem;
+        text-decoration: none;
+    }
+    a:hover {
+        background-color: #f1f1f1;
+    }
+}
+
+.show {
+    display: block;
+}

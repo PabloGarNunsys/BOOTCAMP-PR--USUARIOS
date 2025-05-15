@@ -1,0 +1,38 @@
+details {
+    overflow: hidden;
+}
+details::details-content {
+    block-size: 0;
+    transition: 
+        block-size 1s,
+        content-visibility 1s;
+    transition-behavior: allow-discrete;
+}
+
+details[open]::details-content {
+    block-size: auto;
+}
+
+summary {
+    text-align: start;
+    padding-left: 1rem;
+    margin: 0.5rem;
+}
+p {
+    display: flex;
+    flex-direction: row;
+}
+
+
+label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    margin: 0.8rem;
+    
+    input, 
+    select {
+        width: 100%;
+    }
+}

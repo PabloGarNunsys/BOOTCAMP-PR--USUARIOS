@@ -1,0 +1,43 @@
+<main>
+    <header>
+        <h2>Crear Usuario</h2>
+    </header>
+    <hr>
+    @defer (when roleList) {
+        <form [formGroup]="userForm">
+
+            <label>
+                <span>Nombre</span>
+                <input type="text" name="name" id="name" formControlName="name">
+            </label>
+            <label>
+                <span>Apellidos</span>
+                <input type="text" name="surname" id="surname" formControlName="surname">
+            </label>
+            <label>
+                <span>Email</span>
+                <input type="email" name="email" id="email" formControlName="email">
+            </label>
+            <label>
+                <span>Rol</span>
+                <select name="rol_id" id="rol_id" formControlName="rol_id">
+                    @for (rol of roleList; track rol.id) {
+                        <option [ngValue]="rol.id">{{ rol.name }}</option>
+                    }
+                </select>
+            </label>
+        </form>
+        <div class="buttons">
+            <button class="clickable" routerLink="/users">Volver</button>
+            <button 
+                class="clickable success" 
+                (click)="(id != null ) ? updateUser() : createUser()"
+                [disabled]="!isFormValid()">
+                {{ (id != null ) ? "Editar" : "Crear" }}
+            </button>
+        </div>
+    }
+    @placeholder {
+        <h2>Cargando...</h2>
+    }
+</main>

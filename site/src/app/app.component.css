@@ -1,0 +1,21 @@
+.main-content {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 2.5rem 1fr;
+
+}
+
+header {
+    background-color: var(--header-color);
+    color: whitesmoke;
+}
+
+main {
+    background-color: var(--bg-color);
+    padding: 0.6rem;
+}
+
+footer {
+    background-color: var(--footer-color);
+}

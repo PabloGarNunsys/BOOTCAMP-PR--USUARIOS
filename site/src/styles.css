@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --container-color: #00a3b9;
+    --bg-color: #e6f2f7;
+    --header-color: #084261;
+    --footer-color: #00537f;
+    --success-color: #28a745;
+    --danger-color: #c91d12;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+    background-color: var(--container-color);
+    border: none;
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 0.7rem;
+    transition: box-shadow 0.2s ease;
+}
+
+button.success {
+    background-color: var(--success-color);
+}
+
+button.danger {
+    background-color: var(--danger-color);
+    color: whitesmoke;
+}
+
+button:hover:not(:disabled) {
+    box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.5);
+}
+
+.title {
+    font-weight: bold;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:disabled {
+    cursor: not-allowed;
+}

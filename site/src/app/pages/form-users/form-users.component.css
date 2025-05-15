@@ -1,0 +1,41 @@
+main {
+    margin-left: 20rem;
+    margin-right: 20rem;
+}
+
+form {
+    display: grid;
+    padding: 1rem 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    
+    input, select {
+        padding: 0.3rem;
+    }
+
+}
+
+.buttons {
+    display: flex;
+    align-content: center;
+    justify-content: end;
+    gap: 0.5rem;
+}
+
+@media (max-width: 800px) {
+    form {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    main {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
